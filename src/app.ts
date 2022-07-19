@@ -26,7 +26,7 @@ export class App {
 
                 app.stage.addChild(new Graphics().beginFill(0xffffff).drawRect(100,100,200,200).endFill());
 
-                app.stage.addChild(new Spine(resources.spine.spineData));
+                app.stage.addChild(new Spine(resources['spineboy-pro'].spineData));
             }
     }
 }
