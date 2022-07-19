@@ -17,17 +17,16 @@ export class App {
             });
             document.body.appendChild(app.view);
 
-            // app.loader.baseUrl = "./assets/";
-            // app.loader.add('spineboy-pro', 'spineboy-pro.json')
-            // app.loader.onComplete.add(onAssetsLoaded)
-            // app.loader.load();
-            // function onAssetsLoaded(loader: Loader, resources: utils.Dict<LoaderResource>) {
-            //     console.log(resources);
-
+            app.loader.baseUrl = "./assets/";
+            app.loader.add('spineboy-pro', 'spineboy-pro.json')
+            app.loader.onComplete.add(onAssetsLoaded)
+            app.loader.load();
+            function onAssetsLoaded(loader: Loader, resources: utils.Dict<LoaderResource>) {
+                console.log(resources);
 
                 app.stage.addChild(new Graphics().beginFill(0xffffff).drawRect(100,100,200,200).endFill());
 
-            //     const spine = new Spine(resources.spine.spineData);
-            // }
+                app.stage.addChild(new Spine(resources.spine.spineData));
+            }
     }
 }
