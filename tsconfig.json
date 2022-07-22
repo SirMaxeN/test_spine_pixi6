@@ -6,7 +6,7 @@
     "strict": false,
     "esModuleInterop": true,
     "sourceMap": true,
-    "declaration": false,
+    "declaration": true,
     "allowJs": false,
     "lib": ["dom", "es5", "scripthost", "es2015"],
     "skipLibCheck": true,
