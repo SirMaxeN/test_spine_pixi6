@@ -21,12 +21,12 @@ export class App {
             app.loader.add('spineboy-pro', 'spineboy-pro.json')
             app.loader.onComplete.add(onAssetsLoaded)
             app.loader.load();
-            function onAssetsLoaded(loader: Loader, resources: utils.Dict<LoaderResource>) {
+            function onAssetsLoaded(loader, resources) {
                 console.log(resources);
-
                 app.stage.addChild(new Graphics().beginFill(0xffffff).drawRect(100,100,200,200).endFill());
-
-                app.stage.addChild(new Spine(resources['spineboy-pro'].spineData));
+                const test = new Spine(resources['spineboy-pro'].spineData);
+                test.position.set(500,500);
+                app.stage.addChild(test);
             }
     }
 }

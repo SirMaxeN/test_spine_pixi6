@@ -30,9 +30,6 @@ module.exports = {
         library: "Test",
         umdNamedDefine: true,
     },
-    resolve: {
-        extensions: [".ts", ".tsx", ".js"],
-    },
     optimization: {
         minimize: true,
         minimizer: [
@@ -50,9 +47,15 @@ module.exports = {
     },
     module: {
         rules: [
-            // all files with a `.ts` or `.tsx` extension will be handled by `ts-loader`
-            { test: /\.tsx?$/, loader: "ts-loader" },
+            {
+                test: /\.tsx?$/,
+                use: 'ts-loader',
+                exclude: /node_modules/,
+            },
         ],
+    },
+    resolve: {
+        extensions: ['.tsx', '.ts', '.js'],
     },
     plugins: [
         new CleanWebpackPlugin(),
